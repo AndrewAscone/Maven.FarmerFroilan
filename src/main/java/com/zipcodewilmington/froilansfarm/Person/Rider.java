@@ -1,4 +1,10 @@
 package com.zipcodewilmington.froilansfarm.Person;
 
-public interface Rider {
+import com.zipcodewilmington.froilansfarm.Controller.Rideable;
+
+public interface Rider <T extends Rideable>{
+
+    public void mount();
+
+    public void dismount();
 }

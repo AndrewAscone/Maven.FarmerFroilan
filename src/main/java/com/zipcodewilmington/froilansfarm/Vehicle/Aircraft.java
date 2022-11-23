@@ -1,4 +1,9 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
-public interface Aircraft {
+import com.zipcodewilmington.froilansfarm.Controller.Rideable;
+
+public interface Aircraft extends Rideable {
+
+    public void fly();
+
 }
