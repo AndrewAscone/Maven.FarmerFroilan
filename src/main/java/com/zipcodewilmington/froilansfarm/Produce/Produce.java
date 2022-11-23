@@ -1,4 +1,11 @@
 package com.zipcodewilmington.froilansfarm.Produce;
 
-public interface Produce {
+import com.zipcodewilmington.froilansfarm.Controller.Edible;
+
+public interface Produce extends Edible {
+
+    public void yield();
+
+    public boolean hasBeenFertilized();
+
 }

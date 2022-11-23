@@ -1,4 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Crops;
 
-public abstract class Vegetable {
+import com.zipcodewilmington.froilansfarm.Controller.Edible;
+
+public abstract class Vegetable implements Edible {
 }

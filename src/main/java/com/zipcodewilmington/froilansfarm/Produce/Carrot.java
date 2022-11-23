@@ -1,4 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Produce;
 
-public class Carrot {
+import com.zipcodewilmington.froilansfarm.Crops.Vegetable;
+
+public class Carrot extends Vegetable implements Produce {
 }

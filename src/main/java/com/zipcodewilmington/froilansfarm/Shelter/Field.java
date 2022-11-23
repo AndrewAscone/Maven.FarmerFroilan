@@ -1,4 +1,4 @@
 package com.zipcodewilmington.froilansfarm.Shelter;
 
-public class Field {
+public class Field extends Farm <CropRow>{
 }
