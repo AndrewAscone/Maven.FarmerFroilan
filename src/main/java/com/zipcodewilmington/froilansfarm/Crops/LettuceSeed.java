@@ -9,7 +9,7 @@ public class LettuceSeed extends Crop<Lettuce> implements Produce {
     public boolean hasBeenFertilized() {
         return false;
     }
-    public boolean hasBeenHarvested(Lettuce lettuce) {
+    public boolean hasBeenHarvested(Lettuce letUs) {
         return false;
     }
 }

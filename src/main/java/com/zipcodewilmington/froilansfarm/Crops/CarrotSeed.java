@@ -9,7 +9,7 @@ public class CarrotSeed extends Crop<Carrot> implements Produce {
     public boolean hasBeenFertilized() {
         return false;
     }
-    public boolean hasBeenHarvested(Carrot carrot) {
+    public boolean hasBeenHarvested(Carrot careRot) {
         return false;
     }
 }

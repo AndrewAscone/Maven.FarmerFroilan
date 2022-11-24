@@ -2,9 +2,8 @@ package com.zipcodewilmington.froilansfarm.Person;
 
 import com.zipcodewilmington.froilansfarm.Controller.Rideable;
 
-public interface Rider <T extends Rideable>{
+interface Rider <T extends Rideable>{
 
-    public void mount();
-
-    public void dismount();
+    public boolean mount();
+    //REMOVED DISMOUNT AS IT SOUNDED REDUNDANT & CHANGED MOUNT FROM VOID TO BOOLEAN
 }
