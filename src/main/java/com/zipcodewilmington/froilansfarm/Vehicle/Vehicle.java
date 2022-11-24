@@ -5,11 +5,8 @@ import com.zipcodewilmington.froilansfarm.Controller.Rideable;
 
 public abstract class Vehicle implements NoiseMaker, Rideable {
 
-    public void mount() {
-
+    public boolean mount() {
+        return false;
     }
-
-    public void dismount() {
-
-    }
+    //REMOVED DISMOUNT AS IT SOUNDED REDUNDANT & CHANGED MOUNT FROM VOID TO BOOLEAN
 }

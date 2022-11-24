@@ -3,16 +3,13 @@ package com.zipcodewilmington.froilansfarm.Person;
 import com.zipcodewilmington.froilansfarm.Vehicle.Aircraft;
 import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
 import com.zipcodewilmington.froilansfarm.Vehicle.FarmVehicle;
-import com.zipcodewilmington.froilansfarm.Vehicle.Vehicle;
 
-public class Pilot extends Person implements Rider<Aircraft>, FarmVehicle<CropDuster> {
-    public void mount() {
+public class Pilot implements Rider<Aircraft>, FarmVehicle<CropDuster> {
+    public boolean mount() {
+        return false;
+    }
+    public void operate() {
 
     }
-
-    public void dismount() {
-
-    }
-
-
+    //REMOVED DISMOUNT AS IT SOUNDED REDUNDANT & CHANGED MOUNT FROM VOID TO BOOLEAN
 }

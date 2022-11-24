@@ -9,7 +9,7 @@ public class CornStalk extends Crop<EarCorn> implements Produce {
     public boolean hasBeenFertilized() {
         return false;
     }
-    public boolean hasBeenHarvested(EarCorn earCorn) {
+    public boolean hasBeenHarvested(EarCorn cornDog) {
         return false;
     }
 }

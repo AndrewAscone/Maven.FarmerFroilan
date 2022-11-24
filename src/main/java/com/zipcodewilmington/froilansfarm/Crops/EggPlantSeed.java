@@ -9,7 +9,7 @@ public class EggPlantSeed extends Crop<EggPlant> implements Produce {
     public boolean hasBeenFertilized() {
         return false;
     }
-    public boolean hasBeenHarvested(EggPlant eggPlant) {
+    public boolean hasBeenHarvested(EggPlant plantEgg) {
         return false;
     }
 }

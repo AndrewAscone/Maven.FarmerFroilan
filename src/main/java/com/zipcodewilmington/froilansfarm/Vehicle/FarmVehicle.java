@@ -1,8 +1,8 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
-public abstract class FarmVehicle extends Vehicle {
+public interface FarmVehicle<T extends Vehicle> {
 
-    public void operate() {
+    public void operate();
 
-    }
+    //CHANGED FARMVEHICLE TO INTERFACE SO IT CAN BE IMPLEMENTED INSTEAD OF EXTENDED
 }
