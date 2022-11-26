@@ -5,6 +5,7 @@ import com.zipcodewilmington.froilansfarm.Crops.Crop;
 import java.util.Map;
 
 public class CropRow extends Field implements Storage {
+    //considering set crop as key and integer as value;
     Map<Integer, Crop> cropMap;
     public CropRow(Map<Integer, Crop> cropMap) {
         this.cropMap = cropMap;
