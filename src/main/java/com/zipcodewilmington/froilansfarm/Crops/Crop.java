@@ -1,12 +1,8 @@
 package com.zipcodewilmington.froilansfarm.Crops;
-
-import com.zipcodewilmington.froilansfarm.Controller.Edible;
-import com.zipcodewilmington.froilansfarm.Produce.Produce;
-
-public class Crop <T extends Vegetable> {
-
-    public boolean hasBeenHarvested(T object) {
+public class Crop {
+    public boolean hasBeenHarvested() {
         return false;
     }
     //CHANGED FROM EXTENDS PRODUCE TO EXTENDS VEGETABLE
+    //TOOK OUT GENERIC<T EXTENDS VEGETABLE> FROM CROP
 }

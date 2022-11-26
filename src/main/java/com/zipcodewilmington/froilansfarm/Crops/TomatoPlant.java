@@ -1,15 +1,22 @@
 package com.zipcodewilmington.froilansfarm.Crops;
-
-import com.zipcodewilmington.froilansfarm.Produce.Produce;
-import com.zipcodewilmington.froilansfarm.Produce.Tomato;
-
-public class TomatoPlant extends Crop<Tomato> implements Produce {
-    public void yield() {
+import com.zipcodewilmington.froilansfarm.Produce.*;
+public class TomatoPlant extends Crop implements Produce<Tomato> {
+    Tomato tomato;
+    public TomatoPlant() {
+    }
+    public Tomato yield() {
+        tomato = new Tomato("tomato");
+        if(hasBeenFertilized() & hasBeenHarvested()) {
+            return tomato;
+        }
+        return null;
     }
     public boolean hasBeenFertilized() {
         return false;
     }
-    public boolean hasBeenHarvested(Tomato tomahto) {
+    public boolean hasBeenHarvested() {
         return false;
     }
+    //ADDED TOMATO FIELD, TOMATOPLANT CONSTRUCTOR, FIXED YIELD, HASBEENFERTILIZED & HASBEENHARVESTED(4-19)
+    //TOOK OUT <TOMATO> FROM CROP (3)
 }

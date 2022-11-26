@@ -1,8 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 public class Tractor extends Vehicle{
-
     public Tractor() {
-
     }
     public String makeNoise() {
         return "Example";

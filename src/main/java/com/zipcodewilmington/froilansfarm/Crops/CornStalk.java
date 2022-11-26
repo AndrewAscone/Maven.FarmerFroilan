@@ -1,15 +1,22 @@
 package com.zipcodewilmington.froilansfarm.Crops;
-
-import com.zipcodewilmington.froilansfarm.Produce.EarCorn;
-import com.zipcodewilmington.froilansfarm.Produce.Produce;
-
-public class CornStalk extends Crop<EarCorn> implements Produce {
-    public void yield() {
+import com.zipcodewilmington.froilansfarm.Produce.*;
+public class CornStalk extends Crop implements Produce<EarCorn> {
+    EarCorn earCorn;
+    public CornStalk() {
+    }
+    public EarCorn yield() {
+        earCorn = new EarCorn("earCorn");
+        if(hasBeenHarvested() & hasBeenFertilized()) {
+            return earCorn;
+        }
+        return null;
     }
     public boolean hasBeenFertilized() {
         return false;
     }
-    public boolean hasBeenHarvested(EarCorn cornDog) {
+    public boolean hasBeenHarvested() {
         return false;
     }
+    //ADDED EARCORN FIELD, CORNSTALK CONSTRUCTOR, FIXED YIELD, HASBEENFERTILIZED & HASBEENHARVESTED(4-19)
+    //TOOK OUT <EARCORN> FROM CROP (3)
 }

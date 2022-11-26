@@ -1,17 +1,31 @@
 package com.zipcodewilmington.froilansfarm.Person;
-
-import com.zipcodewilmington.froilansfarm.Controller.Eater;
-import com.zipcodewilmington.froilansfarm.Controller.Edible;
-import com.zipcodewilmington.froilansfarm.Controller.NoiseMaker;
+import com.zipcodewilmington.froilansfarm.Controller.*;
 import com.zipcodewilmington.froilansfarm.Shelter.Storage;
-
 public class Person implements NoiseMaker, Eater<Edible>, Storage {
-
-    public void eat(Edible edible) {
-
+    String name;
+    int age;
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
     }
-
+    public Edible eat(Edible edible) {
+        return edible;
+    }
     public String makeNoise() {
         return null;
     }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public int getAge() {
+        return age;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
+    //ADDED CONSTRUCTOR PASSING NAME & AGE
+    //ADDED GETTERS AND SETTERS FOR NAME & AGE
 }

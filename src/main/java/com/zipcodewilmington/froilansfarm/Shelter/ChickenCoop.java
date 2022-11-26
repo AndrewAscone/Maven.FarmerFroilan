@@ -1,15 +1,15 @@
 package com.zipcodewilmington.froilansfarm.Shelter;
-
 import com.zipcodewilmington.froilansfarm.Animal.Chicken;
-
 public class ChickenCoop extends Farm<Chicken>{
-
+    Chicken chicken;
     public ChickenCoop(){
-
     }
-    public void store(Chicken chickfila) {
-
+    public void store(Chicken chicken) {
     }
-    //ADDED CONSTRUCTOR (7-9)
-    //ADDED METHOD STORE (10-12)
+    public Chicken release() {
+        return chicken;
+    }
+    //ADDED CONSTRUCTOR (5-6)
+    //ADDED METHOD STORE (7-8)
+    //ADDED METHOD RELEASE() (10-12)
 }

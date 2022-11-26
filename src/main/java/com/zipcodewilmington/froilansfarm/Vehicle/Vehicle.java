@@ -1,10 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
-
-import com.zipcodewilmington.froilansfarm.Controller.NoiseMaker;
-import com.zipcodewilmington.froilansfarm.Controller.Rideable;
-
-public abstract class Vehicle implements NoiseMaker, Rideable {
-
+import com.zipcodewilmington.froilansfarm.Controller.*;
+public abstract class Vehicle implements NoiseMaker {
     public boolean mount() {
         return false;
     }
