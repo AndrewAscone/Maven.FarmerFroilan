@@ -1,14 +1,16 @@
 package com.zipcodewilmington.froilansfarm.Shelter;
-
 import com.zipcodewilmington.froilansfarm.Person.Person;
-
 public class FarmHouse extends Farm<Person>{
-
+    Person person;
     public FarmHouse() {
-
     }
-    public void store(Person purrson) {
-
+    public void store(Person person) {
+        this.person = person;
     }
-    //ADDED FARMHOUSE CONSTRUCTOR (7-9)
+    public Person release() {
+        return this.person;
+    }
+    //ADDED FARMHOUSE CONSTRUCTOR (5-6)
+    //ADDED METHOD STORE() (7-9)
+    //ADDED METHOD RELEASE() (10-12)
 }

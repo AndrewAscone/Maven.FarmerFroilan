@@ -1,13 +1,11 @@
 package com.zipcodewilmington.froilansfarm.Shelter;
-
 public class Field extends Farm <CropRow>{
-
+    CropRow cropRow;
     public Field() {
-
     }
-    public void store(CropRow crapRow) {
-
+    public void store(CropRow cropRow) {
+        this.cropRow = cropRow;
     }
-    //ADDED STORE METHOD (8-10)
-    //ADDED FIELD CONSTRUCTOR (5-7)
+    //ADDED STORE METHOD (6-8)
+    //ADDED FIELD CONSTRUCTOR (3-5)
 }
