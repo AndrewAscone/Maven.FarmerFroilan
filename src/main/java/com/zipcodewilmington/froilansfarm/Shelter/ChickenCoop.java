@@ -5,27 +5,33 @@ import com.zipcodewilmington.froilansfarm.Produce.EarCorn;
 
 public class ChickenCoop extends Farm<Chicken>{
     Chicken[] chicken;
-    public ChickenCoop(){
+    String name;
+    public ChickenCoop(String name){
+        this.name = name;
     }
-    public ChickenCoop(Chicken chicken, Chicken chicken2) {
+    public ChickenCoop(String name, Chicken chicken, Chicken chicken2) {
+        this.name = name;
         this.chicken = new Chicken[2];
         this.chicken[0] = chicken;
         this.chicken[1] = chicken2;
     }
-    public ChickenCoop(Chicken chicken, Chicken chicken2, Chicken chicken3) {
+    public ChickenCoop(String name, Chicken chicken, Chicken chicken2, Chicken chicken3) {
+        this.name = name;
         this.chicken = new Chicken[3];
         this.chicken[0] = chicken;
         this.chicken[1] = chicken2;
         this.chicken[2] = chicken3;
     }
-    public ChickenCoop(Chicken chicken, Chicken chicken2, Chicken chicken3, Chicken chicken4) {
+    public ChickenCoop(String name, Chicken chicken, Chicken chicken2, Chicken chicken3, Chicken chicken4) {
+        this.name = name;
         this.chicken = new Chicken[4];
         this.chicken[0] = chicken;
         this.chicken[1] = chicken2;
         this.chicken[2] = chicken3;
         this.chicken[3] = chicken4;
     }
-    public ChickenCoop(Chicken chicken, Chicken chicken2, Chicken chicken3, Chicken chicken4, Chicken chicken5, Chicken chicken6) {
+    public ChickenCoop(String name, Chicken chicken, Chicken chicken2, Chicken chicken3, Chicken chicken4, Chicken chicken5, Chicken chicken6) {
+        this.name = name;
         this.chicken = new Chicken[6];
         this.chicken[0] = chicken;
         this.chicken[1] = chicken2;
@@ -43,20 +49,13 @@ public class ChickenCoop extends Farm<Chicken>{
             }
         }
     }
-    public Chicken release(int stableNumber) {
-        if(this.chicken[stableNumber] != null) {
-            Chicken temp;
-            temp = chicken[stableNumber];
-            chicken[stableNumber] = null;
-            System.out.println("\033[1;30m\033[47m" + temp + " has been released.\033[0m");
-            return temp;
-        }
-        return null;
-    }
     public void feed(EarCorn earCorn) {
         for(int i = 0; i < chicken.length; i++) {
             chicken[i].eat(earCorn);
         }
+    }
+    public String getName() {
+        return name;
     }
     //ADDED CONSTRUCTOR (5-6)
     //ADDED METHOD STORE (7-8)

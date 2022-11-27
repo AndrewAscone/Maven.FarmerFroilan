@@ -2,7 +2,9 @@ package com.zipcodewilmington.froilansfarm.Crops;
 import com.zipcodewilmington.froilansfarm.Produce.*;
 public class TomatoPlant extends Crop implements Produce<Tomato> {
     Tomato tomato;
-    public TomatoPlant() {
+    String name;
+    public TomatoPlant(String name) {
+        this.name = name;
     }
     public Tomato yield() {
         tomato = new Tomato("tomato");
@@ -16,6 +18,9 @@ public class TomatoPlant extends Crop implements Produce<Tomato> {
     }
     public boolean hasBeenHarvested() {
         return false;
+    }
+    public String getName() {
+        return name;
     }
     //ADDED TOMATO FIELD, TOMATOPLANT CONSTRUCTOR, FIXED YIELD, HASBEENFERTILIZED & HASBEENHARVESTED(4-19)
     //TOOK OUT <TOMATO> FROM CROP (3)

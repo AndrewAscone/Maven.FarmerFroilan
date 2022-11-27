@@ -3,24 +3,15 @@ import com.zipcodewilmington.froilansfarm.Animal.Horse;
 import com.zipcodewilmington.froilansfarm.Crops.*;
 import com.zipcodewilmington.froilansfarm.Shelter.CropRow;
 import com.zipcodewilmington.froilansfarm.Vehicle.*;
-import java.util.Map;
+
 public class Farmer extends Person implements Botanist, Rider<Horse>, FarmVehicle<Tractor> {
-    CornStalk cornStalk;
-    TomatoPlant tomatoPlant;
-    LettuceSeed lettuceSeed;
-    EggPlantSeed eggPlantSeed;
-    CarrotSeed carrotSeed;
-    Map<Integer, Crop> sow;
     boolean mount = true;
     boolean dismount = false;
     Horse horse;
     public Farmer(String name, int age) {
         super(name, age);
     }
-    public void plant() {
-        CropRow cropRow = new CropRow(sow);
-        cropRow.sow(cornStalk, tomatoPlant, lettuceSeed, eggPlantSeed, carrotSeed);
-    }
+
     public boolean operate(Tractor tractor) {
         return false;
     }
@@ -50,6 +41,17 @@ public class Farmer extends Person implements Botanist, Rider<Horse>, FarmVehicl
         this.dismount = false;
         this.mount = true;
         return !this.dismount;
+    }
+
+    @Override
+    public CropRow plant(Crop crop1, Crop crop2, Crop crop3, Crop crop4, Crop crop5) {
+        CropRow cropRow = new CropRow();
+        cropRow.setCropMap(1, crop1);
+        cropRow.setCropMap(2, crop2);
+        cropRow.setCropMap(3, crop3);
+        cropRow.setCropMap(4, crop4);
+        cropRow.setCropMap(5, crop5);
+        return cropRow;
     }
     //REMOVED DISMOUNT AS IT SOUNDED REDUNDANT & CHANGED MOUNT FROM VOID TO BOOLEAN
     //ADDED CONSTRUCTOR PASSING NAME & AGE TO SUPER

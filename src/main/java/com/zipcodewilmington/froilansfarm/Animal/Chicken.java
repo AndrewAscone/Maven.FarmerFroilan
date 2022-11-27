@@ -36,6 +36,10 @@ public class Chicken extends Animal<Vegetable> implements Produce<EdibleEgg>, St
 
     }
     @Override
+    public String getName() {
+        return null;
+    }
+    @Override
     public void eat(Vegetable vegetable) {
         this.vegetable = vegetable;
     }
