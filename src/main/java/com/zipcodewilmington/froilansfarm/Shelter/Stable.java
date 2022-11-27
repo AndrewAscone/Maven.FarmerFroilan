@@ -1,9 +1,5 @@
 package com.zipcodewilmington.froilansfarm.Shelter;
 import com.zipcodewilmington.froilansfarm.Animal.Horse;
-
-import java.awt.*;
-import java.io.Console;
-
 public class Stable extends Farm<Horse> {
     Horse[] horse;
     public Stable(Horse horse, Horse horse2) {
