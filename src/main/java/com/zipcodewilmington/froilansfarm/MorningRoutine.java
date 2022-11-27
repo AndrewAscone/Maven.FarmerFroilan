@@ -39,6 +39,8 @@ public class MorningRoutine {
     Horse horseOnField1;
     Horse horseOnField2;
     public MorningRoutine() {
+    }
+    public void morningActivities(){
         System.out.println("\033[0;107m\033[1;91m\t\tMorning Routine for CALM Farm\t\t\033[0m\n");
         horseOnField1 = stable.release(0);
         horseOnField2 = stable.release(1);

@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm.Crops;
 import com.zipcodewilmington.froilansfarm.Produce.*;
+import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
+
 public class LettuceSeed extends Crop implements Produce<Lettuce> {
     Lettuce lettuce;
     String name;
@@ -14,6 +16,12 @@ public class LettuceSeed extends Crop implements Produce<Lettuce> {
         return null;
     }
     public boolean hasBeenFertilized() {
+        CropDuster cropDuster = new CropDuster();
+        if(cropDuster.fertilize()) {
+            System.out.println();
+            return true;
+        }
+        System.out.println();
         return false;
     }
     public boolean hasBeenHarvested() {
