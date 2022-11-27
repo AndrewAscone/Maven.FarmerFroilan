@@ -4,6 +4,8 @@ import com.zipcodewilmington.froilansfarm.Shelter.Storage;
 public class Person implements NoiseMaker, Eater<Edible>, Storage {
     String name;
     int age;
+    public Person() {
+    }
     public Person(String name, int age) {
         this.name = name;
         this.age = age;

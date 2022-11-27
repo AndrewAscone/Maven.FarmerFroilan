@@ -7,14 +7,30 @@ import com.zipcodewilmington.froilansfarm.Vehicle.*;
 public class Farmer extends Person implements Botanist, Rider<Horse>, FarmVehicle<Tractor> {
     boolean mount = true;
     boolean dismount = false;
+    boolean operate = true;
+    boolean switchOff = false;
     Horse horse;
     public Farmer(String name, int age) {
         super(name, age);
     }
 
     public boolean operate(Tractor tractor) {
-        return false;
+        if(this.operate) System.out.println("\033[1;32mFroilan is operating " + tractor.getName() + ".\033[0m");
+        if(!this.operate) System.out.println("\033[1;32mFroilan is currently operating " + tractor.getName() + ".\033[0m");
+        this.switchOff = true;
+        return this.operate = false;
     }
+    public boolean getOperate() {
+        return this.operate;
+    }
+    @Override
+    public boolean switchOff(Tractor tractor) {
+        if(this.switchOff) System.out.println("\033[1;32mFroilan has parked & turned off " + tractor.getName() + ".\033[0m");
+        if(!this.switchOff) System.out.println("\033[1;32mFroilan is not operating any vehicle.\033[0m");
+        this.operate = true;
+        return !this.switchOff;
+    }
+
     @Override
     public boolean mount(Horse horse) {
         if(this.mount) {
@@ -42,7 +58,6 @@ public class Farmer extends Person implements Botanist, Rider<Horse>, FarmVehicl
         this.mount = true;
         return !this.dismount;
     }
-
     @Override
     public CropRow plant(Crop crop1, Crop crop2, Crop crop3, Crop crop4, Crop crop5) {
         CropRow cropRow = new CropRow();

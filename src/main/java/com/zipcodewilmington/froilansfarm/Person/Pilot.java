@@ -4,16 +4,30 @@ import com.zipcodewilmington.froilansfarm.Vehicle.*;
 public class Pilot extends Person implements Rider<Horse>, FarmVehicle<CropDuster> {
     boolean mount = true;
     boolean dismount = false;
+    boolean operate = true;
+    boolean switchOff = false;
+    Horse horse;
+    public Pilot() {
+    }
     public Pilot(String name, int age) {
         super(name, age);
     }
-    public boolean mount() {
-        return false;
-    }
     public boolean operate(CropDuster cropDuster) {
-        return false;
+        if(this.operate) System.out.println("\033[1;36mFroilanda is operating " + cropDuster.getname() + ".\033[0m");
+        if(!this.operate) System.out.println("\033[1;36mFroilanda is currently operating " + cropDuster.getname() + ".\033[0m");
+        this.switchOff = true;
+        return this.operate = false;
     }
-    Horse horse;
+    public boolean getOperate() {
+        return this.operate;
+    }
+    @Override
+    public boolean switchOff(CropDuster cropDuster) {
+        if(this.switchOff) System.out.println("\033[1;36mFroilanda has landed & turned off " + cropDuster.getname() + ".\033[0m");
+        if(!this.switchOff) System.out.println("\033[1;36mFroilanda is not operating any vehicle.\033[0m");
+        this.operate = true;
+        return !this.switchOff;
+    }
     @Override
     public boolean mount(Horse horse) {
         if(this.mount) {
