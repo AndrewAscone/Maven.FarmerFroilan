@@ -14,7 +14,7 @@ public class CarrotSeed extends Crop implements Produce<Carrot> {
     public boolean hasBeenFertilized() {
         return false;
     }
-    public boolean hasBeenHarvested(Carrot careRot) {
+    public boolean hasBeenHarvested(Carrot carrot) {
         return false;
     }
     //ADDED CARROT FIELD, CARROTSEED CONSTRUCTOR, FIXED YIELD, HASBEENFERTILIZED & HASBEENHARVESTED(4-19)
