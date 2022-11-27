@@ -21,4 +21,8 @@ public class Horse extends Animal<Vegetable> implements Rideable, Storage {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getVegetable(){
+        return vegetable.getName();
+    }
 }
