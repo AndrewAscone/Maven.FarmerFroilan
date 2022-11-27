@@ -7,7 +7,7 @@ public class Tomato implements Vegetable {
     }
     @Override
     public String getName() {
-        return null;
+        return name;
     }
     //GOT RID OF IMPLEMENTS PRODUCE
     //THIS WAY, WE ARE NOT FORCED TO USE YIELD() & HASBEENFERTILIZED() FROM PRODUCE

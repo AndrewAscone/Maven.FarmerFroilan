@@ -5,7 +5,6 @@ public class FarmHouse extends Farm<Person>{
     public FarmHouse() {
     }
     public void store(Person person) {
-        this.person = person;
     }
     public Person release() {
         return this.person;

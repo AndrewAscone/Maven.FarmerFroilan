@@ -8,8 +8,7 @@ public class Person implements NoiseMaker, Eater<Edible>, Storage {
         this.name = name;
         this.age = age;
     }
-    public Edible eat(Edible edible) {
-        return edible;
+    public void eat(Edible edible) {
     }
     public String makeNoise() {
         return null;
@@ -28,4 +27,5 @@ public class Person implements NoiseMaker, Eater<Edible>, Storage {
     }
     //ADDED CONSTRUCTOR PASSING NAME & AGE
     //ADDED GETTERS AND SETTERS FOR NAME & AGE
+
 }

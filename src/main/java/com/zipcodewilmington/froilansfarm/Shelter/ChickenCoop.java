@@ -5,6 +5,7 @@ public class ChickenCoop extends Farm<Chicken>{
     public ChickenCoop(){
     }
     public void store(Chicken chicken) {
+
     }
     public Chicken release() {
         return chicken;

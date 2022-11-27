@@ -13,6 +13,7 @@ public class Farmer extends Person implements Botanist, Rider<Horse>, FarmVehicl
     Map<Integer, Crop> sow;
     boolean mount = true;
     boolean dismount = false;
+    Horse horse;
     public Farmer(String name, int age) {
         super(name, age);
     }
@@ -25,16 +26,27 @@ public class Farmer extends Person implements Botanist, Rider<Horse>, FarmVehicl
     }
     @Override
     public boolean mount(Horse horse) {
-        if(this.mount) System.out.println("Froilan is mounting on " + horse.getName() + ".");
-        if(!this.mount) System.err.println("Froilan is currently mounting on another horse. Please dismount first");
+        if(this.mount) {
+            System.out.println("\033[1;32mFroilan is mounting on " + horse.getName() + ".\033[0m");
+            this.horse = horse;
+        }
+        if(!this.mount) {
+            System.out.println("\033[1;32mFroilan is currently mounting on another horse. Please dismount first.\033[0m");
+            return !this.mount;
+        }
         this.mount = false;
         this.dismount = true;
         return !this.mount;
     }
     @Override
     public boolean dismount(Horse horse) {
-        if(this.dismount) System.out.println("Froilan has dismounted " + horse.getName() + ".");
-        if(!this.dismount) System.err.println("Froilan is not mounting to any horse");
+        if(this.dismount && this.horse == horse) {
+            System.out.println("\033[1;32mFroilan has dismounted " + horse.getName() + ".");
+        } else {
+            System.out.println("\033[1;32mNot the right horse to dismount from");
+            return this.dismount;
+        }
+        if(!this.dismount) System.out.println("\033[1;32mFroilan is not mounting to any horse.\033[0m");
         this.dismount = false;
         this.mount = true;
         return !this.dismount;

@@ -36,8 +36,7 @@ public class Chicken extends Animal<Vegetable> implements Produce<EdibleEgg>, St
 
     }
     @Override
-    public Vegetable eat(Vegetable vegetable) {
+    public void eat(Vegetable vegetable) {
         this.vegetable = vegetable;
-        return null;
     }
 }
