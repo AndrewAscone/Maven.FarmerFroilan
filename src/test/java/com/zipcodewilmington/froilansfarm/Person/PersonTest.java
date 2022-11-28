@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Person;
 
+import com.zipcodewilmington.froilansfarm.Animal.Cow;
 import com.zipcodewilmington.froilansfarm.Controller.Eater;
 import com.zipcodewilmington.froilansfarm.Controller.NoiseMaker;
 import com.zipcodewilmington.froilansfarm.Shelter.Storage;
@@ -58,5 +59,11 @@ public class PersonTest {
         Person person = new Person();
         person.setAge(100);
         Assert.assertEquals(person.getAge(), 100);
+    }
+    @Test
+    public void milkTest() {
+        Cow cow = new Cow("Cow");
+        Person person = new Person("Test",0);
+        Assert.assertTrue(person.milk(cow));
     }
 }

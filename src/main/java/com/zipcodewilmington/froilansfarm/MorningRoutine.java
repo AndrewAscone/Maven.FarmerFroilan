@@ -1,11 +1,14 @@
 package com.zipcodewilmington.froilansfarm;
 import com.zipcodewilmington.froilansfarm.Animal.Chicken;
+import com.zipcodewilmington.froilansfarm.Animal.Cow;
 import com.zipcodewilmington.froilansfarm.Animal.Horse;
 import com.zipcodewilmington.froilansfarm.Controller.Edible;
 import com.zipcodewilmington.froilansfarm.Crops.Vegetable;
 import com.zipcodewilmington.froilansfarm.Person.*;
 import com.zipcodewilmington.froilansfarm.Produce.*;
 import com.zipcodewilmington.froilansfarm.Shelter.ChickenCoop;
+import com.zipcodewilmington.froilansfarm.Shelter.CowShed;
+import com.zipcodewilmington.froilansfarm.Shelter.FarmHouse;
 import com.zipcodewilmington.froilansfarm.Shelter.Stable;
 
 public class MorningRoutine {
@@ -25,16 +28,30 @@ public class MorningRoutine {
     Lettuce lettuce = new Lettuce("lettuce");
     Carrot carrot = new Carrot("carrot");
     EdibleEgg egg = new EdibleEgg("egg");
-    Farmer froilan = new Farmer("Froilan", 30);
-    Pilot froilanda = new Pilot("Froilanda", 28);
+    FarmHouse house = new FarmHouse();
+    Farmer froilan = (Farmer) house.getPersonObject(0);
+    Pilot froilanda = (Pilot) house.getPersonObject(1);
     Stable stable = new Stable(pegasus, charlie);
     Stable stable2 = new Stable(nightmare, sebastian, dullahan);
     Stable stable3 = new Stable(jackstraw, reba, waseca, seabiscuit, redhare);
     Chicken kentucky, popeyes, link, torchic, foghorn, eggmaker, wanda, yolkahontas, zelda, chickadee, whatever, barbie, kardashian, henzilla, cruella;
     ChickenCoop coopACabana = new ChickenCoop("Coop-A-Cabana", kentucky = new Chicken(), torchic = new Chicken());
-    ChickenCoop tajMaCoop = new ChickenCoop("Taj Ma Coop",popeyes = new Chicken(), eggmaker = new Chicken(), wanda = new Chicken());
+    ChickenCoop tajMaCoop = new ChickenCoop("Taj-Ma-Coop",popeyes = new Chicken(), eggmaker = new Chicken(), wanda = new Chicken());
     ChickenCoop eggCademy = new ChickenCoop("Egg-Cademy",link = new Chicken(), yolkahontas = new Chicken(), chickadee = new Chicken(), whatever = new Chicken());
     ChickenCoop justGotLaid = new ChickenCoop("Just-Got-Laid",foghorn = new Chicken(), zelda = new Chicken(), barbie = new Chicken(), kardashian = new Chicken(), henzilla = new Chicken(), cruella = new Chicken());
+    Cow betty = new Cow("Betty");
+    Cow buttercup = new Cow ("Buttercup");
+    Cow maggie = new Cow ("Maggie");
+    Cow sweetie = new Cow ("Sweetie");
+    Cow emma = new Cow ("Emma");
+    Cow molly = new Cow ("Molly");
+    Cow beef = new Cow ("Beef");
+    Cow penelope = new Cow ("Penelope");
+    Cow meg = new Cow ("Meg");
+    Cow bessie = new Cow ("Bessie");
+    CowShed cowShed1 = new CowShed(betty, bessie);
+    CowShed cowShed2 = new CowShed(buttercup, maggie, sweetie);
+    CowShed cowShed3 = new CowShed(beef, emma, molly, penelope, meg);
     Edible[] froilanBreakfast;
     Edible[] froilandaBreakfast;
     Horse horseOnField1;
@@ -43,6 +60,11 @@ public class MorningRoutine {
     }
     public void activities(){
         System.out.println("\033[0;107m\033[1;91m\t\tMorning Routine for CALM Farm\t\t\033[0m\n");
+        house.leave(froilan);
+        house.leave(froilanda);
+        cowShedRelease(cowShed1);
+        cowShedRelease(cowShed2);
+        cowShedRelease(cowShed3);
         horseOnField1 = stable.release(0);
         horseOnField2 = stable.release(1);
         froilan.mount(horseOnField1);
@@ -96,7 +118,23 @@ public class MorningRoutine {
         System.out.print(horseFeeding(horseOnField2,earCorn,eggPlant,lettuce));
         System.out.print(froilanBreakfast(froilan,this.egg, this.tomato, this.earCorn));
         System.out.print(froilandaBreakfast(froilanda,this.earCorn, this.tomato, this.egg));
+        cowShed1.store(betty);
+        cowShed1.store(buttercup);
+        cowShed2.store(bessie);
+        cowShed2.store(penelope);
+        cowShed2.store(maggie);
+        cowShed3.store(beef);
+        cowShed3.store(sweetie);
+        cowShed3.store(meg);
+        cowShed3.store(emma);
+        cowShed3.store(molly);
         System.out.println("\n\033[0;107m\033[1;91m\t\tEnd of Morning Routine\t\t\033[0m\n");
+    }
+    public Cow cowShedRelease(CowShed cowShed) {
+        for(int i = 0; i < cowShed.getCowShedSize(); i++) {
+            cowShed.release(i);
+        }
+        return null;
     }
     public String horseFeeding(Horse horse, Vegetable vegetable1, Vegetable vegetable2, Vegetable vegetable3) {
         horse.eat(vegetable1);
