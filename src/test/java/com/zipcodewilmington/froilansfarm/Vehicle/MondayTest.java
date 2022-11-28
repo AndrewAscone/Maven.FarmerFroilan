@@ -14,26 +14,26 @@ public class MondayTest {
 
     @Test
     public void cropDusterOperateTest(){
-        Assert.assertFalse(froilanda.operate(cropDuster));
+        Assert.assertFalse(monday.cropDusterOperate());
     }
 
     @Test
     public void cropDusterFlyTest(){
-        froilanda.operate(cropDuster);
-        Assert.assertTrue(cropDuster.fly(froilanda));
+        monday.cropDusterOperate();
+        Assert.assertTrue(monday.cropDusterFly());
     }
 
     @Test
     public void cropDusterFertilizeTest(){
-        froilanda.operate(cropDuster);
-        cropDuster.fly(froilanda);
-        Assert.assertTrue(cropDuster.fertilize());
+        monday.cropDusterOperate();
+        monday.cropDusterFly();
+        Assert.assertTrue(monday.cropDusterFertilize());
     }
 
     @Test
     public void cropDusterSwitchOffTest(){
-        froilanda.operate(cropDuster);
-        cropDuster.fly(froilanda);
-        Assert.assertFalse(froilanda.switchOff(cropDuster));
+        monday.cropDusterOperate();
+        monday.cropDusterFly();
+        Assert.assertFalse(monday.cropDusterSwitchOff());
     }
 }
