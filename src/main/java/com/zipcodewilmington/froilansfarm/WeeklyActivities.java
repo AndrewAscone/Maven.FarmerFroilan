@@ -4,8 +4,6 @@ import com.zipcodewilmington.froilansfarm.Crops.*;
 
 public class WeeklyActivities {
     public WeeklyActivities(){
-        MorningRoutine routine = new MorningRoutine();
-        routine.activities();
         Sunday sunday = new Sunday();
         sunday.activities();
         Monday monday = new Monday();
@@ -14,5 +12,11 @@ public class WeeklyActivities {
         tuesday.activities();
         Wednesday wednesday = new Wednesday();
         wednesday.activities();
+        Thursday thursday = new Thursday();
+        thursday.activities();
+        Friday friday = new Friday();
+        friday.activities();
+        Saturday saturday = new Saturday();
+        saturday.activities();
     }
 }

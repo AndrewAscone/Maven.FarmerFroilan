@@ -10,7 +10,7 @@ import org.junit.Test;
 
 public class HorseTests {
     @Test
-    public void horseConstrutorTest(){
+    public void horseConstructorTest(){
         Horse test = new Horse("Test");
 
         String expected = "Test";
