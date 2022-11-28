@@ -13,7 +13,7 @@ public class Person implements NoiseMaker, Eater<Edible>, Storage {
     public void eat(Edible edible) {
     }
     public String makeNoise() {
-        return null;
+        return "Hello World!";
     }
     public String getName() {
         return name;

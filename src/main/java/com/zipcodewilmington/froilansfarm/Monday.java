@@ -8,7 +8,7 @@ public class Monday {
     CropDuster cropDuster = new CropDuster("Crop Duster");
     public Monday() {
     }
-    public void prompt() {
+    public void activities() {
         System.out.println("\033[0;107m\033[1;91m\t\tMonday Routine for CALM Farm\t\t\033[0m\n");
         cropDusterOperate();
         cropDusterFly();

@@ -22,7 +22,7 @@ public class SundayTest {
         cropRow = froilan.plant(cornStalk, tomatoPlant, eggPlantSeed, lettuceSeed, carrotSeed);
         StringBuilder sb = new StringBuilder();
         String expected = sunday.farmersPlant(cornStalk, tomatoPlant, eggPlantSeed, lettuceSeed, carrotSeed);
-        sb.append(String.format("\033[1;92m%s has planted:\033[0m", froilan.getName()));
+        sb.append(String.format("\n\033[1;92m%s has planted:\033[0m", froilan.getName()));
         for (Integer i : cropRow.getCropMap().keySet()) {
             sb.append(String.format("\033[1;92m\n>> Row %d: %s\033[0m", i, cropRow.getCropMap().get(i).getName()));
         }

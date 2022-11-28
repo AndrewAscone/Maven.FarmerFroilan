@@ -3,7 +3,6 @@ package com.zipcodewilmington.froilansfarm.AnimalTests;
 import com.zipcodewilmington.froilansfarm.Animal.Animal;
 import com.zipcodewilmington.froilansfarm.Animal.Horse;
 import com.zipcodewilmington.froilansfarm.Controller.Rideable;
-import com.zipcodewilmington.froilansfarm.Crops.Vegetable;
 import com.zipcodewilmington.froilansfarm.Produce.Carrot;
 import com.zipcodewilmington.froilansfarm.Shelter.Storage;
 import org.junit.Assert;
