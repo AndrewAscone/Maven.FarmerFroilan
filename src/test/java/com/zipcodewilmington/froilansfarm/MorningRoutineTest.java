@@ -20,7 +20,7 @@ public class MorningRoutineTest {
     Pilot froilanda = new Pilot("Froilandas", 28);
     Chicken kentucky, popeyes, link, torchic, foghorn, eggmaker, wanda, yolkahontas, zelda, chickadee, whatever, barbie, kardashian, henzilla, cruella;
     ChickenCoop coopACabana = new ChickenCoop("Coop-A-Cabana", kentucky = new Chicken(), torchic = new Chicken());
-    ChickenCoop tajMaCoop = new ChickenCoop("Taj Ma Coop",popeyes = new Chicken(), eggmaker = new Chicken(), wanda = new Chicken());
+    ChickenCoop tajMaCoop = new ChickenCoop("Taj-Ma-Coop",popeyes = new Chicken(), eggmaker = new Chicken(), wanda = new Chicken());
     ChickenCoop eggCademy = new ChickenCoop("Egg-Cademy",link = new Chicken(), yolkahontas = new Chicken(), chickadee = new Chicken(), whatever = new Chicken());
     ChickenCoop justGotLaid = new ChickenCoop("Just-Got-Laid",foghorn = new Chicken(), zelda = new Chicken(), barbie = new Chicken(), kardashian = new Chicken(), henzilla = new Chicken(), cruella = new Chicken());
     @Test
