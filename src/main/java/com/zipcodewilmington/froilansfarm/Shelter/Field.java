@@ -6,6 +6,9 @@ public class Field extends Farm <CropRow>{
     public void store(CropRow cropRow) {
         this.cropRow = cropRow;
     }
+    public CropRow getCropRow() {
+        return cropRow;
+    }
     //ADDED STORE METHOD (6-8)
     //ADDED FIELD CONSTRUCTOR (3-5)
 }
