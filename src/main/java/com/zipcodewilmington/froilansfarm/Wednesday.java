@@ -7,7 +7,6 @@ public class Wednesday {
     Chicken chicken = new Chicken();
     Pilot froilanda = new Pilot("Froilanda", 28);
     public Wednesday() {
-        activities();
     }
     public void activities() {
         System.out.println("\033[0;107m\033[1;92m\t\tWednesday Routine for CALM Farm\t\t\033[0m\n");

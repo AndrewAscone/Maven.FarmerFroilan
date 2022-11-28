@@ -1,15 +1,10 @@
 package com.zipcodewilmington.froilansfarm.CropsTests;
-
-import com.zipcodewilmington.froilansfarm.Crops.CornStalk;
 import com.zipcodewilmington.froilansfarm.Crops.EggPlantSeed;
-import com.zipcodewilmington.froilansfarm.Produce.EggPlant;
 import com.zipcodewilmington.froilansfarm.Produce.Produce;
 import com.zipcodewilmington.froilansfarm.Crops.Crop;
 import org.junit.Assert;
 import org.junit.Test;
-
 public class EggplantSeedTest {
-
     @Test
     public void constructorTest(){
         EggPlantSeed test = new EggPlantSeed("test");

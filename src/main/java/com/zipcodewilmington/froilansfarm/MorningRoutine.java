@@ -7,6 +7,7 @@ import com.zipcodewilmington.froilansfarm.Person.*;
 import com.zipcodewilmington.froilansfarm.Produce.*;
 import com.zipcodewilmington.froilansfarm.Shelter.ChickenCoop;
 import com.zipcodewilmington.froilansfarm.Shelter.Stable;
+
 public class MorningRoutine {
     Horse pegasus = new Horse("Pegasus");
     Horse charlie = new Horse("Charlie");
@@ -18,7 +19,7 @@ public class MorningRoutine {
     Horse waseca = new Horse ("Waseca");
     Horse seabiscuit = new Horse ("Seabiscuit");
     Horse redhare = new Horse ("Redhare");
-    EarCorn earCorn = new EarCorn("earcorn");
+    Carrot earCorn = new Carrot("earcorn");
     Tomato tomato = new Tomato("tomato");
     EggPlant eggPlant = new EggPlant("eggplant");
     Lettuce lettuce = new Lettuce("lettuce");
@@ -40,7 +41,7 @@ public class MorningRoutine {
     Horse horseOnField2;
     public MorningRoutine() {
     }
-    public void morningActivities(){
+    public void activities(){
         System.out.println("\033[0;107m\033[1;91m\t\tMorning Routine for CALM Farm\t\t\033[0m\n");
         horseOnField1 = stable.release(0);
         horseOnField2 = stable.release(1);
@@ -50,8 +51,8 @@ public class MorningRoutine {
         froilanda.dismount(horseOnField2);
         stable.store(horseOnField1);
         stable.store(horseOnField2);
-        horseFeeding(horseOnField1,earCorn,earCorn,carrot);
-        horseFeeding(horseOnField2,earCorn,earCorn,eggPlant);
+        System.out.print(horseFeeding(horseOnField1,earCorn,earCorn,carrot));
+        System.out.print(horseFeeding(horseOnField2,earCorn,earCorn,eggPlant));
         horseOnField1 = stable2.release(0);
         horseOnField2 = stable2.release(1);
         froilan.mount(horseOnField1);
@@ -60,8 +61,8 @@ public class MorningRoutine {
         froilanda.dismount(horseOnField2);
         stable2.store(horseOnField1);
         stable2.store(horseOnField2);
-        horseFeeding(horseOnField1,earCorn,earCorn,earCorn);
-        horseFeeding(horseOnField2,earCorn,earCorn,lettuce);
+        System.out.print(horseFeeding(horseOnField1,earCorn,earCorn,earCorn));
+        System.out.print(horseFeeding(horseOnField2,earCorn,earCorn,lettuce));
         horseOnField1 = stable2.release(2);
         horseOnField2 = stable3.release(0);
         froilan.mount(horseOnField1);
@@ -70,9 +71,9 @@ public class MorningRoutine {
         froilanda.dismount(horseOnField2);
         stable2.store(horseOnField1);
         stable3.store(horseOnField2);
-        horseFeeding(horseOnField1,carrot,earCorn,carrot);
-        horseFeeding(horseOnField2,carrot,eggPlant,carrot);
-        chickenFeeding(this.earCorn);
+        System.out.print(horseFeeding(horseOnField1,carrot,earCorn,carrot));
+        System.out.print(horseFeeding(horseOnField2,carrot,eggPlant,carrot));
+        System.out.print(chickenFeeding(this.earCorn));
         horseOnField1 = stable3.release(1);
         horseOnField2 = stable3.release(2);
         froilan.mount(horseOnField1);
@@ -81,8 +82,8 @@ public class MorningRoutine {
         froilanda.dismount(horseOnField2);
         stable3.store(horseOnField1);
         stable3.store(horseOnField2);
-        horseFeeding(horseOnField1,carrot,carrot,lettuce);
-        horseFeeding(horseOnField2,carrot,carrot,carrot);
+        System.out.print(horseFeeding(horseOnField1,carrot,carrot,lettuce));
+        System.out.print(horseFeeding(horseOnField2,carrot,carrot,carrot));
         horseOnField1 = stable3.release(3);
         horseOnField2 = stable3.release(4);
         froilan.mount(horseOnField1);
@@ -91,10 +92,10 @@ public class MorningRoutine {
         froilanda.dismount(horseOnField2);
         stable3.store(horseOnField1);
         stable3.store(horseOnField2);
-        horseFeeding(horseOnField1,lettuce,earCorn,carrot);
-        horseFeeding(horseOnField2,earCorn,eggPlant,lettuce);
-        froilanBreakfast(froilan,this.egg, this.tomato, this.earCorn);
-        froilandaBreakfast(froilanda,this.earCorn, this.tomato, this.egg);
+        System.out.print(horseFeeding(horseOnField1,lettuce,earCorn,carrot));
+        System.out.print(horseFeeding(horseOnField2,earCorn,eggPlant,lettuce));
+        System.out.print(froilanBreakfast(froilan,this.egg, this.tomato, this.earCorn));
+        System.out.print(froilandaBreakfast(froilanda,this.earCorn, this.tomato, this.egg));
         System.out.println("\n\033[0;107m\033[1;91m\t\tEnd of Morning Routine\t\t\033[0m\n");
     }
     public String horseFeeding(Horse horse, Vegetable vegetable1, Vegetable vegetable2, Vegetable vegetable3) {
@@ -103,7 +104,7 @@ public class MorningRoutine {
         horse.eat(vegetable3);
         return String.format("\033[1;94m%s has been fed with %s, %s, & %s", horse.getName(), vegetable1.getName(), vegetable2.getName(), vegetable3.getName() + ".\n\033[0m");
     }
-    public String froilanBreakfast(Farmer farmer, EdibleEgg egg, Tomato tomato, EarCorn earCorn) {
+    public String froilanBreakfast(Farmer farmer, EdibleEgg egg, Tomato tomato, Carrot earCorn) {
         this.froilanBreakfast = new Edible[8];
         for(int i = 0; i < 5; i++) {
             farmer.eat(egg);
@@ -113,7 +114,7 @@ public class MorningRoutine {
         farmer.eat(earCorn);
         return String.format("\033[1;32m%s has eaten 5 %s, 2 %s, & 1 %s\n\033[0m", farmer.getName(), egg.getName(), tomato.getName(), earCorn.getName());
     }
-    public String froilandaBreakfast(Pilot pilot, EarCorn earCorn, Tomato tomato, EdibleEgg egg) {
+    public String froilandaBreakfast(Pilot pilot, Carrot earCorn, Tomato tomato, EdibleEgg egg) {
         this.froilandaBreakfast = new Edible[5];
         pilot.eat(earCorn);
         pilot.eat(earCorn);
@@ -122,7 +123,7 @@ public class MorningRoutine {
         pilot.eat(egg);
         return String.format("\033[1;36m%s has eaten 2 %s, 1 %s, & 2 %s\n\033[0m", pilot.getName(), egg.getName(), tomato.getName(), earCorn.getName());
     }
-    public String chickenFeeding(EarCorn earCorn) {
+    public String chickenFeeding(Carrot earCorn) {
         coopACabana.feed(earCorn);
         tajMaCoop.feed(earCorn);
         eggCademy.feed(earCorn);

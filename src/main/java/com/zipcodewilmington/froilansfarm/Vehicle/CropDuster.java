@@ -12,7 +12,7 @@ public class CropDuster extends Vehicle implements Aircraft {
         this.name = name;
     }
     public String makeNoise() {
-        return null;
+        return "Brrr";
     }
     public boolean fly(Pilot pilot) {
         CropDuster cropDuster = new CropDuster("Crop Duster");
@@ -29,7 +29,7 @@ public class CropDuster extends Vehicle implements Aircraft {
             System.out.println("\033[1;95mAll of the crop rows have been fertilized.\033[0m");
             return fertilizeResult = true;
         } else {
-            System.out.printf("\033[1;95m%s is not currently operating.\033[0m",getname());
+            System.out.printf("\033[1;95m%s is not flying.\033[0m",getname());
         }
         return fertilizeResult = false;
     }

@@ -8,7 +8,7 @@ public class Tuesday {
     Tractor tractor = new Tractor("Tractor");
     public Tuesday(){
     }
-    public void prompt(){
+    public void activities(){
         System.out.println("\033[0;107m\033[1;93m\t\tTuesday Routine for CALM Farm\t\t\033[0m\n");
         froilan.operate(tractor);
         tractor.harvest(froilan);

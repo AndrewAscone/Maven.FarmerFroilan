@@ -16,7 +16,7 @@ public class CarrotSeed extends Crop implements Produce<Carrot> {
     public boolean hasBeenFertilized() {
         return false;
     }
-    public boolean hasBeenHarvested(Carrot carrot) {
+    public boolean hasBeenHarvested() {
         return false;
     }
     public String getName() {

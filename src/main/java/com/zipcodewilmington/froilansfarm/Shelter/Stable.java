@@ -2,6 +2,9 @@ package com.zipcodewilmington.froilansfarm.Shelter;
 import com.zipcodewilmington.froilansfarm.Animal.Horse;
 public class Stable extends Farm<Horse> {
     Horse[] horse;
+    public Stable(int num) {
+        horse = new Horse[num];
+    }
     public Stable(Horse horse, Horse horse2) {
         this.horse = new Horse[2];
         this.horse[0] = horse;

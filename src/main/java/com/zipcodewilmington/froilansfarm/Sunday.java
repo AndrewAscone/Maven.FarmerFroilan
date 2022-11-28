@@ -15,7 +15,7 @@ public class Sunday {
 
     public Sunday() {
     }
-    public void prompt(){
+    public void activities(){
         StringBuilder sb = new StringBuilder();
         sb.append("\033[0;107m\033[1;95m\t\tSunday Routine for CALM Farm\t\t\033[0m\n")
                 .append(farmersPlant(this.cornStalk, this.tomatoPlant, this.eggPlantSeed, this.lettuceSeed, this.carrotSeed))

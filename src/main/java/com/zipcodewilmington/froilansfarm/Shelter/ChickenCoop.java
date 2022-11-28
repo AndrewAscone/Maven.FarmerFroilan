@@ -1,13 +1,13 @@
 package com.zipcodewilmington.froilansfarm.Shelter;
 import com.zipcodewilmington.froilansfarm.Animal.Chicken;
-import com.zipcodewilmington.froilansfarm.Animal.Horse;
-import com.zipcodewilmington.froilansfarm.Produce.EarCorn;
+import com.zipcodewilmington.froilansfarm.Produce.Carrot;
 
 public class ChickenCoop extends Farm<Chicken>{
     Chicken[] chicken;
     String name;
     public ChickenCoop(String name){
         this.name = name;
+        chicken = new Chicken[1];
     }
     public ChickenCoop(String name, Chicken chicken, Chicken chicken2) {
         this.name = name;
@@ -49,10 +49,18 @@ public class ChickenCoop extends Farm<Chicken>{
             }
         }
     }
-    public void feed(EarCorn earCorn) {
+    public void feed(Carrot earCorn) {
         for(int i = 0; i < chicken.length; i++) {
             chicken[i].eat(earCorn);
         }
+    }
+    public Chicken getChicken(){
+        for(int i = 0; i < this.chicken.length; i++) {
+            if(chicken[i] != null) {
+                return chicken[i];
+            }
+        }
+        return null;
     }
     public String getName() {
         return name;
